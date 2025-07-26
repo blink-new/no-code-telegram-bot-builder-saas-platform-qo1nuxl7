@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* TeleFlow Brand Colors */
+    --primary: 198 100% 40%; /* #0088cc - Telegram Blue */
+    --primary-foreground: 0 0% 98%;
+    --accent: 174 100% 42%; /* #00d4aa - Success Teal */
+    --accent-foreground: 0 0% 98%;
+    --background: 210 20% 98%; /* #fafbfc - Light Gray */
+    --foreground: 222 84% 5%; /* #0f1419 - Dark Text */
+    
+    /* UI Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 5%;
+    --secondary: 210 40% 95%;
+    --secondary-foreground: 222 84% 5%;
+    --muted: 210 40% 95%;
+    --muted-foreground: 215 16% 47%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 198 100% 40%;
+    --radius: 0.5rem;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 198 100% 40%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 95%;
+    --sidebar-accent-foreground: 222 84% 5%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 198 100% 40%;
+  }
+
+  .dark {
+    --background: 222 84% 5%; /* #0f1419 - Dark Mode */
+    --foreground: 0 0% 98%;
+    --card: 222 84% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 84% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 198 100% 50%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 174 100% 50%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 198 100% 50%;
+    --sidebar-background: 222 84% 5%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 198 100% 50%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 198 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+/* Flow Builder Styles */
+.react-flow__node {
+  @apply border-2 border-border rounded-lg shadow-sm;
+}
+
+.react-flow__node.selected {
+  @apply border-primary;
+}
+
+.react-flow__handle {
+  @apply w-3 h-3 border-2 border-background;
+}
+
+.react-flow__handle-top {
+  @apply bg-primary;
+}
+
+.react-flow__handle-bottom {
+  @apply bg-accent;
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--primary));
+  stroke-width: 2;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: hsl(var(--accent));
+  stroke-width: 3;
+}
+
+.react-flow__controls {
+  @apply bg-card border border-border rounded-lg shadow-sm;
+}
+
+.react-flow__controls button {
+  @apply bg-card hover:bg-muted border-border;
+}
+
+.react-flow__minimap {
+  @apply bg-card border border-border rounded-lg;
+}
